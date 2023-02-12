@@ -28,9 +28,6 @@ body {
 .header {
 	position: relative;
 	height: 95vh;
-	/* width: 100vw;
-	top: 0;
-	left: 0; */
 	/* We can use more than one img, we can set gradient direction */
 	background-image: linear-gradient(
 			to right bottom,
@@ -58,9 +55,9 @@ body {
 
 .text-box {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	background-color: red;
+	top: 30%;
+	left: 30%;
+	/* background-color: red; */
 }
 
 .heading-pry {
