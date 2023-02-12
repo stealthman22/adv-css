@@ -1,0 +1,24 @@
+Advanced Css by Jonas Schemdtmann
+
+Lecture 1: What we shall learn;
+
+Performing a basic reset with the universal selector
+Setting up project-wide font definitions.
+Clipping parts of elements using clip-path.
+
+border box means change the box model, so borders and padding aren't added to height and width we specify for a box. For example: width: 200px; will give you exactly 200px wide box, borders and padding will only add to the width.
+
+Properties related to fonts are always inherited.
+
+You can have more than one background img in css, simply use comma in order of preference.
+When adding a linear gradient as background image, we can add the direction :
+background-image: linear-gradient(to right, #7ed56f, #28b485),
+url(../assets/hero.jpg);
+Clipping helps us create amazing shapes, using the clip path
+
+Lesson 2 : What we whall learn:
+The Easiest way to center anything with the transform properties.
+
+For images, it is a good practice to place the image in a container, and then position that container exaclty where we want the image to be.
+
+The span elements is perfect for styling some texts differently within the same element.
