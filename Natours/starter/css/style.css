@@ -35,7 +35,7 @@ body {
 			rgba(40, 180, 133, 0.803)
 		),
 		url(../assets/hero.jpg);
-	/* makes image fill entire space at alll times */
+	/* makes image fill entire space at all times */
 	background-size: cover;
 	/* attaches the top of the image to make sure it never changes on all screens */
 	background-position: top;
@@ -54,6 +54,10 @@ body {
 	height: 35px;
 }
 
+/* .logo:hover {
+	animation: moveInRight 1s ease-out;
+} */
+
 .text-box {
 	position: absolute;
 	/* This is what worked for properly centering the text box for me */
@@ -61,12 +65,15 @@ body {
 	left: 50%;
 	/* width: 100%; */
 	transform: translate(-50%, -50%);
-	/* text-align: center; */
+	text-align: center;
 }
 
 .heading-pry {
 	color: #fff;
 	text-transform: uppercase;
+	/* determines if the back part of an element when it moves is visible to the user */
+	backface-visibility: hidden;
+	margin-bottom: 60px;
 }
 
 .heading-pry-main {
@@ -74,6 +81,13 @@ body {
 	font-size: 60px;
 	font-weight: 700;
 	letter-spacing: 35px;
+
+	animation-name: moveInLeft;
+	animation-duration: 1s;
+	/* animation-delay: 2s; */
+	/* animation-iteration-count: 3; */
+	animation-timing-function: ease-out;
+	animation: moveInLeft 1s ease-out;
 }
 
 .heading-pry-sub {
@@ -81,6 +95,78 @@ body {
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 17.4px;
+
+	/* animation-name: moveInRight;
+	animation-duration: 1s;
+	animation-timing-function: ease-out; */
+	animation: moveInRight 1s ease-out;
 }
 /* clippy tool helps us do this... bennetfeely.com/clippy */
 /* 0 0, 0 100px, 100% 200px, 0 100% */
+
+/* headers animations */
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	/* 50% {
+		transform: rotate(13deg);
+	} */
+
+	80% {
+		opacity: 1;
+		transform: translateX(10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+
+	80% {
+		opacity: 1;
+		transform: translateX(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.btn:link,
+.btn:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 40px;
+	border-radius: 100px;
+	display: inline-block;
+	/* easier to use than keyframes */
+	transition: all 0.2s ease-out;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
+	/* low opacity/alpha values works nicely with buttons */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+	background-color: #fff;
+	color: #777;
+}
